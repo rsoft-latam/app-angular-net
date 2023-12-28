@@ -1,0 +1,6 @@
+<p>story page</p>
+<p>COUNTRIES SAVED</p>
+
+<div style="display: flex; flex-direction: column">
+  <a [routerLink]="['../home', country.id]" *ngFor="let country of countries">{{country.name}}</a>
+</div>

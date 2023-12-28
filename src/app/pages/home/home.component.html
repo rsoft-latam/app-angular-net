@@ -1,0 +1,28 @@
+<p>home page!</p>
+
+<p>SEARCH CITY</p>
+
+<select [(ngModel)]="countrySelected">
+  <option *ngFor="let country of countriesList" [value]="country.id">{{country.name}}</option>
+</select>
+
+<select [(ngModel)]="tempSelected">
+  <option value="Fahrenheit">Fahrenheit</option>
+  <option value="Celsius">Celsius</option>
+  <option value="Kelvin">Kelvin</option>
+</select>
+
+<button (click)="onSearch()">Search</button>
+
+<p>DATA RESULT</p>
+
+<div *ngIf="country" style="border: 2px solid red;">
+  <p>Ciudad {{country?.name}}</p>
+  <p>País{{country?.country}}</p>
+  <p>Icono ??</p>
+  <p>Temperatura {{country.main?.temp}}</p>
+  <p>Sensación Térmica</p>
+  <p>Descripción del clima</p>
+  <p>Temperatura minima {{country.main?.temp_max}}</p>
+  <p>Temperatura maxima {{country.main?.temp_min}}</p>
+</div>
